@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import ToDoList from './list';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const list = []; // ここでtodoの情報を補完するための「配列」というものを宣言しているよ
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+ReactDOM.render( // reactの機能を使って()内のものを画面上に表示させているよ
+    <ToDoList toDoList={list}/>, // 表示させるものとして、list.jsxで書いた「reactコンポーネント」というものを指定してるよ
+    　　　　　　　　　　　　　　　　// 更に、toDoList={list}という部分で、このreactコンポーネントにlistを渡しているよ
+    document.getElementById('root')
+);
+
 serviceWorker.unregister();
